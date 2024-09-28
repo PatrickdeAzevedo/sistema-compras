@@ -75,3 +75,100 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
+### 3. Instalar Dependências
+Entre em cada pasta de componente (`api_principal`, `componente_b`, `componente_c`) e instale as dependências:
+
+```bash
+cd api_principal
+pip install -r requirements.txt
+
+cd ../componente_b
+pip install -r requirements.txt
+
+cd ../componente_c
+pip install -r requirements.txt
+```
+
+Conteúdo recomendado para o arquivo `requirements.txt` de cada um dos componentes, com as bibliotecas necessárias para que os serviços funcionem corretamente:
+
+`api_principal/requirements.txt` (Componente A)
+```bash
+flask==2.2.2
+flask-openapi3==1.0.2
+requests==2.28.1
+```
+
+`componente_b/requirements.txt` (Componente B)
+```bash
+flask==2.2.2
+flask-openapi3==1.0.2
+requests==2.28.1
+```
+
+`componente_c/requirements.txt` (Componente C)
+```bash
+flask==2.2.2
+flask-openapi3==1.0.2
+sqlite3==0.1.0
+```
+
+### 4. Executar Localmente com Flask
+Execute cada componente em um terminal separado:
+
+**API Principal (Componente A)**
+```bash
+cd api_principal
+flask run --host=0.0.0.0 --port=5000
+```
+
+**API Externa (Componente B)**
+```bash
+cd componente_b
+flask run --host=0.0.0.0 --port=5001
+```
+
+**API de Dados (Componente C)**
+```bash
+cd componente_c
+flask run --host=0.0.0.0 --port=5002
+```
+
+Após iniciar todos os componentes, a API estará disponível nos seguintes endpoints:
+
+- **API Principal**: http://localhost:5000
+- **API Externa**: http://localhost:5001
+- **API de Dados**: http://localhost:5002
+
+### 5. Executar com Docker
+**Construir e Iniciar os Containers**
+No diretório raiz, onde está o `docker-compose.yml`, execute:
+```bash
+docker-compose up --build
+```
+
+**Parar e Remover os Containers**
+```bash
+docker-compose down
+```
+
+### 6. Estrutura de Diretórios
+A estrutura dos diretórios do projeto segue a organização:
+```bash
+sistema-compras/
+├── api_principal/
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── componente_b/
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── componente_c/
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+└── docker-compose.yml
+```
+
+### Testando a API
+Após iniciar os componentes, você pode testar as rotas usando o `Swagger UI` (para a API Principal) ou ferramentas como o `Postman` para verificar a comunicação entre os serviços.
