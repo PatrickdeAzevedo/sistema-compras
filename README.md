@@ -1,4 +1,6 @@
 # Sistema de Compras com Microsserviços
+MVP da Disciplina Desenvolvimento Back-End Avançado da PUC-Rio
+Projeto desnvolvido por Patrick de Azevedo, patrickdezevedo@gmail.com
 
 ## Visão Geral do Projeto
 
@@ -58,3 +60,15 @@ Para executar este projeto localmente, você precisará ter instalado:
 ```bash
 git clone https://github.com/PatrickdeAzevedo/sistema-compras.git
 cd sistema-compras
+
+### 2. Configrar e Ativar o Ambiente Virtual
+
+```bash
+# Criar o ambiente virtual
+python -m venv venv
+
+# Ativar o ambiente virtual (Windows)
+venv\Scripts\activate
+
+# Ativar o ambiente virtual (Linux/Mac)
+source venv/bin/activate
