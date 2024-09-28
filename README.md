@@ -1,6 +1,6 @@
 # Sistema de Compras com Microsserviços
-MVP da Disciplina Desenvolvimento Back-End Avançado da PUC-Rio
-Projeto desnvolvido por Patrick de Azevedo, patrickdezevedo@gmail.com
+**MVP da Disciplina Desenvolvimento Back-End Avançado da PUC-Rio**
+Projeto desenvolvido por **Patrick de Azevedo**, [patrickdezevedo@gmail.com](mailto:patrickdeazevedo@gmail.com)
 
 ## Visão Geral do Projeto
 
