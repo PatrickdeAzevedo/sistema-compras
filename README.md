@@ -60,6 +60,7 @@ Para executar este projeto localmente, você precisará ter instalado:
 ```bash
 git clone https://github.com/PatrickdeAzevedo/sistema-compras.git
 cd sistema-compras
+```
 
 ### 2. Configrar e Ativar o Ambiente Virtual
 
@@ -72,3 +73,5 @@ venv\Scripts\activate
 
 # Ativar o ambiente virtual (Linux/Mac)
 source venv/bin/activate
+```
+
