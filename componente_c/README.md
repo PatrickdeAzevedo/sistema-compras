@@ -63,13 +63,7 @@ git clone https://github.com/PatrickdeAzevedo/sistema-compras.git
 cd sistema-compras
 ```
 
-### 2. Configurar e Ativar o Ambiente Virtual para cada Componente
-Mover-se pelas pastas através do comando `cd` e em cada pasta criar um ambiente virtual:
-```bash
-cd api_principal
-cd ..\componente_b
-cd ..\componente_c
-```
+### 2. Configurar e Ativar o Ambiente Virtual
 
 ```bash
 # Criar o ambiente virtual
@@ -81,7 +75,6 @@ venv\Scripts\activate
 # Ativar o ambiente virtual (Linux/Mac)
 source venv/bin/activate
 ```
-**OBS.: No Windows, se der erro, tem que ser executado no PowerShell como administrador o comando: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned**
 
 ### 3. Instalar Dependências
 Entre em cada pasta de componente (`api_principal`, `componente_b`, `componente_c`) e instale as dependências:
@@ -98,30 +91,26 @@ pip install -r requirements.txt
 ```
 
 Conteúdo recomendado para o arquivo `requirements.txt` de cada um dos componentes, com as bibliotecas necessárias para que os serviços funcionem corretamente:
-**OBS.: se não funcionar, retirar as versões das bibliotecas e rodar de novo o pip install.**
 
 `api_principal/requirements.txt` (Componente A)
 ```bash
 flask==2.2.2
 flask-openapi3==1.0.2
-flask-cors=5.0.0
-requests==2.32.3
+requests==2.28.1
 ```
 
 `componente_b/requirements.txt` (Componente B)
 ```bash
 flask==2.2.2
 flask-openapi3==1.0.2
-flask-cors==5.0.0
-requests==2.32.3
+requests==2.28.1
 ```
 
 `componente_c/requirements.txt` (Componente C)
 ```bash
 flask==2.2.2
 flask-openapi3==1.0.2
-flask-cors==5.0.0
-requests==2.32.3
+sqlite3==0.1.0
 ```
 
 ### 4. Executar Localmente com Flask

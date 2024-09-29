@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # Componente A: API Principal
+  api_principal:
+    build:
+      context: ./api_principal
+    container_name: api_principal
+    ports:
+      - "5000:5000"
+    depends_on:
+      - componente_b
+      - componente_c
+
+  # Componente B: API Externa (FakeStore)
+  componente_b:
+    build:
+      context: ./componente_b
+    container_name: componente_b
+    ports:
+      - "5001:5001"
+
+  # Componente C: API de Dados com persistência interna
+  componente_c:
+    build:
+      context: ./componente_c
+    container_name: componente_c
+    ports:
+      - "5002:5002"
